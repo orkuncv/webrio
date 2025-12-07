@@ -10,7 +10,7 @@ abstract class AbstractCommand
 {
 
     const GLOBAL_CONFIG = [
-        'THEME_SLUG' => 'nova',
+        'THEME_SLUG' => 'nova-theme',
         'API_BASE_URL' => '',
         'THEMES_DIR' => 'web/app/themes',
         'LICENSE_ARG' => '--license-key=',

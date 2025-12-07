@@ -78,7 +78,7 @@ class InstallCommand extends AbstractCommand
     public function execute(array $options): int
     {
         $this->projectBaseDir = getcwd();
-        $this->themeSlug = self::GLOBAL_CONFIG['THEME_SLUG'] ?? 'nova';
+        $this->themeSlug = self::GLOBAL_CONFIG['THEME_SLUG'] ?? 'nova-theme';
         $this->outputZipFilename = $this->themeSlug.'.zip';
         $this->tempCloneFullPath = $this->projectBaseDir.DIRECTORY_SEPARATOR.self::TEMP_CLONE_DIR_NAME;
 
