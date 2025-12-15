@@ -8,6 +8,8 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+.idea/
+.idea/*
 
 # WordPress
 web/wp
