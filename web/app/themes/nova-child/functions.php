@@ -22,3 +22,18 @@ require_once get_template_directory() . '/inc/autoloader.php';
  * @since 1.0.0
  */
 require_once get_stylesheet_directory() . '/inc/bootstrap.php';
+
+/**
+ * Enqueue Google Fonts
+ *
+ * @since 1.0.0
+ */
+function nova_child_enqueue_google_fonts(): void {
+	wp_enqueue_style(
+		'nova-child-google-fonts',
+		'https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap',
+		[],
+		null
+	);
+}
+add_action( 'wp_enqueue_scripts', 'nova_child_enqueue_google_fonts' );
