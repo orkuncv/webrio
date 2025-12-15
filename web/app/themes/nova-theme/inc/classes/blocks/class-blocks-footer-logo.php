@@ -92,6 +92,7 @@ if ( ! class_exists( 'Nova_Blocks_Footer_Logo' ) ) :
 				$home_url   = home_url( '/' );
 				$alt_text   = sprintf( esc_attr__( '%s - Home', 'nova' ), get_bloginfo( 'name', 'display' ) );
 				$site_title = esc_attr( get_bloginfo( 'name', 'display' ) );
+				$logo_size  = get_option( 'nova_theme_footer_logo_size', '76' );
 
 				$wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'nova-footer-logo-block-wrapper' ] );
 
@@ -99,7 +100,7 @@ if ( ! class_exists( 'Nova_Blocks_Footer_Logo' ) ) :
 				?>
 				<div <?php echo $wrapper_attributes; ?>>
 					<a href="<?php echo esc_url( $home_url ); ?>" title="<?php echo $site_title; ?>" rel="home">
-						<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo $alt_text; ?>" class="nova-footer-logo" loading="lazy" height="42px"/>
+						<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo $alt_text; ?>" class="nova-footer-logo" loading="lazy" height="<?php echo esc_attr( $logo_size ); ?>px"/>
 					</a>
 				</div>
 				<?php
