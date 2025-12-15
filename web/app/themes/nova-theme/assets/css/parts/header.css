@@ -59,10 +59,6 @@ html body .wp-block-navigation-item__label {
    Header logo
    ========================================================================== */
 
-.nova-header-logo {
-    height: var(--nova-header-logo-height, 72px);
-}
-
 /* Logo size variations */
 body.nova-header-logo-small .nova-header-logo {
     --nova-header-logo-height: 48px;

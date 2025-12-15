@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f1f11e-309d-44a1-8029-4b5fa57f43aa" name="Changes" comment="Added deploy">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="17f1f11e-309d-44a1-8029-4b5fa57f43aa" name="Changes" comment="Added range">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/themes/nova-theme/assets/css/parts/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/themes/nova-theme/assets/css/parts/header.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="ComposerConfigs">
     <option name="configs">
@@ -79,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765828187874</updated>
       <workItem from="1765828188941" duration="3000" />
-      <workItem from="1765828408210" duration="1369000" />
+      <workItem from="1765828408210" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="Added deploy">
       <option name="closed" value="true" />
@@ -89,7 +94,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765828805683</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="plugins">
+      <option name="closed" value="true" />
+      <created>1765829799729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765829799729</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added range">
+      <option name="closed" value="true" />
+      <created>1765830975005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765830975005</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +118,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added deploy" />
+    <MESSAGE value="plugins" />
+    <MESSAGE value="Added range" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added range" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$USER_HOME$/htdocs/lumeco/public_html</wordpressPath>
