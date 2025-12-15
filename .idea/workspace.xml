@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17f1f11e-309d-44a1-8029-4b5fa57f43aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/application.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environments/development.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/environments/staging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/mu-plugins/bedrock-autoloader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/plugins/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/themes/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/app/uploads/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/wp-config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-cli.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +15,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP Herd" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="36taBhluhLKUX3qqAh7iaNqTvwB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +28,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "master",
     "vue.rearranger.settings.migration": "true"
@@ -63,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765828187874</updated>
       <workItem from="1765828188941" duration="3000" />
+      <workItem from="1765828408210" duration="21000" />
     </task>
     <servers />
   </component>
