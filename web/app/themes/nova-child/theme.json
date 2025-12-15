@@ -2,6 +2,65 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "nova-100",
+					"color": "#0B1F3B",
+					"name": "Navy Primary"
+				},
+				{
+					"slug": "nova-75",
+					"color": "#0B1F3B",
+					"name": "Navy Primary"
+				},
+				{
+					"slug": "nova-50",
+					"color": "#0B1F3B",
+					"name": "Navy Primary"
+				},
+				{
+					"slug": "nova-25",
+					"color": "#0B1F3B",
+					"name": "Navy Primary"
+				},
+				{
+					"slug": "nova-10",
+					"color": "#0B1F3B",
+					"name": "Navy Primary"
+				},
+				{
+					"slug": "white",
+					"color": "#FFFFFF",
+					"name": "White"
+				},
+				{
+					"slug": "background-primary",
+					"color": "#E6E6EF",
+					"name": "Background Primary"
+				},
+				{
+					"slug": "background-section",
+					"color": "#E6E6EF",
+					"name": "Background Section"
+				},
+				{
+					"slug": "wordpress-blue",
+					"color": "#08162B",
+					"name": "Navy Hover"
+				},
+				{
+					"slug": "wordpress-blue-light",
+					"color": "#08162B",
+					"name": "Navy Hover"
+				},
+				{
+					"slug": "success-green",
+					"color": "#2ECC71",
+					"name": "Green Primary CTA"
+				}
+			]
+		},
 		"typography": {
 			"fontFamilies": [
 				{
