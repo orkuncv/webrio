@@ -59,19 +59,6 @@ html body .wp-block-navigation-item__label {
    Header logo
    ========================================================================== */
 
-/* Logo size variations */
-body.nova-header-logo-small .nova-header-logo {
-    --nova-header-logo-height: 48px;
-}
-
-body.nova-header-logo-medium .nova-header-logo {
-    --nova-header-logo-height: 72px;
-}
-
-body.nova-header-logo-large .nova-header-logo {
-    --nova-header-logo-height: 96px;
-}
-
 .wp-block-nova-header-logo a {
     transition: all 0.2s cubic-bezier(.62,.16,.13,1.01);
     height: 100%;
@@ -593,13 +580,6 @@ ul.nova-header-nav__menu > li li:hover .wp-block-navigation__submenu-icon.wp-blo
     .admin-bar:has(.wp-block-navigation__responsive-container.is-menu-open:not(.hidden-by-default)) .nova-header__low-search .nova-header-logo,
     .admin-bar:has(.wp-block-navigation__responsive-container.is-menu-open:not(.hidden-by-default)) .nova-header-stacked .nova-header-logo {
         transform: translateY(-44px) !important;
-    }
-
-
-    .nova-header__low-search .nova-header-logo,
-    .nova-header-stacked .nova-header-logo,
-    .nova-header-logo {
-        height: 48px;
     }
 
     .nova-header__search .nova-header__search__top {
