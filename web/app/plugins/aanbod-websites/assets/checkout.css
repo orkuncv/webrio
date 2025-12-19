@@ -1,269 +1,309 @@
 .website-checkout-wrapper {
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: #edf6ff;
+    width: 100%;
     max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: #e3f1ff;
 }
 
 .checkout-container {
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 40px;
-    align-items: start;
-    width: 1180px;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 968px) {
     .checkout-container {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 
 /* Left Column - Product Showcase */
 .checkout-left {
-    background: #fff;
-    padding: 40px;
     position: sticky;
-    top: 20px;
+    top: 100px;
+    height: fit-content;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: var(--wp--custom--border-radius--large);
 }
 
 .checkout-left h2 {
-    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: space-between;
     font-size: 24px;
-    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #0B1F3B;
+    line-height: 35px;
 }
 
-.checkout-left h3 {
-    margin: 30px 0 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* Right Column - Checkout Form */
-.checkout-right {
+.product-showcase {
     background: #fff;
-    padding: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 5px;
+    border-bottom: 1px solid #E4E7EC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.checkout-right h2 {
-    margin: 0 0 10px 0;
-    font-size: 28px;
-    font-weight: 700;
+.product-showcase p {
+    line-height: 40px;
+    margin: 0;
+    color: #0B1F3B;
 }
 
-.checkout-right .subtitle {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-.selected-website {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.selected-website .website-image {
-    margin-bottom: 20px;
-}
-
-.selected-website .website-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.selected-website h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.website-excerpt {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 15px;
+.product-showcase:last-of-type {
+    border-bottom: 0;
 }
 
 .button-change-website {
-    background: #fff;
-    color: #dc3232;
-    border: 1px solid #dc3232;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 4px;
+    width: 100%;
+    padding: 12px 24px;
+    background: #ffffff;
+    color: var(--wp--preset--color--nova-100);
+    border: 1px solid #CAD0D9;
+    border-radius: var(--wp--custom--border-radius--large);
+    font-family: var(--wp--custom--font-family--button);
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 10px;
+    transition: all 0.3s ease;
 }
 
 .button-change-website:hover {
-    background: #dc3232;
-    color: #fff;
+    background: #CAD0D9;
 }
 
-.no-website-selected {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f9f9f9;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.no-website-selected p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Package Selection */
-.package-selection-section {
-    margin-bottom: 30px;
+/* Right Column - Form */
+.checkout-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     background: #fff;
     padding: 25px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: var(--wp--custom--border-radius--large);
+}
+
+.checkout-right h2 {
+    font-size: 28px;
+    margin: 0;
+    color: #0B1F3B;
+}
+
+.checkout-right .subtitle {
+    color: #6F7988;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Selected Package Display */
+.selected-package-display {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.selected-package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 .section-title {
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 5px 0;
+    margin: 0;
+    color: #0B1F3B;
 }
 
-.section-title .required {
-    color: #dc3232;
-}
-
-.section-description {
-    color: #666;
+.change-package-btn {
+    padding: 8px 16px;
+    background: transparent;
+    color: var(--wp--preset--color--nova-100);
+    border: 1px solid #CAD0D9;
+    border-radius: var(--wp--custom--border-radius--medium);
+    font-family: var(--wp--custom--font-family--button);
     font-size: 14px;
-    margin: 0 0 20px 0;
-}
-
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.package-option {
-    position: relative;
-    display: block;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.package-option input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
+.change-package-btn:hover {
+    background: #CAD0D9;
+    color: #0B1F3B;
 }
 
-.package-option-content {
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
+.selected-package-card {
+    position: relative;
     background: #fff;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 24px;
 }
 
-.package-option:hover .package-option-content {
-    border-color: #2271b1;
-    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.15);
-}
-
-.package-option input[type="radio"]:checked ~ .package-option-content {
-    border-color: #2271b1;
-    background: #f0f7ff;
-    box-shadow: 0 4px 12px rgba(34, 113, 177, 0.2);
-}
-
-.package-option.selected .package-option-content {
-    border-color: #2271b1;
-    background: #f0f7ff;
-}
-
-.package-option-content h4 {
-    margin: 0 0 10px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-}
-
-.package-option-price {
-    font-size: 24px;
+.package-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #2ECC71;
+    color: white;
+    padding: 4px 12px;
+    border-radius: var(--wp--custom--border-radius--full);
+    font-size: 12px;
     font-weight: 700;
-    color: #2271b1;
-    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.package-option-desc {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.5;
+.selected-package-card h4 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    color: #0B1F3B;
+}
+
+.package-price-display {
+    font-weight: 700;
+    color: #0B1F3B;
     margin: 0;
-    flex: 1;
+}
+
+.price-period {
+    font-size: 16px;
+    font-weight: 400;
+    color: #6F7988;
+}
+
+.package-desc {
+    font-size: 14px;
+    color: #6F7988;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.package-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.package-features-list li {
+    padding: 6px 0 6px 24px;
+    color: #6F7988;
+    font-size: 14px;
+    position: relative;
+}
+
+.package-features-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2ECC71;
+    font-weight: bold;
+}
+
+.no-package-selected {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 24px;
+    text-align: center;
+}
+
+.no-package-selected p {
+    margin: 0 0 16px 0;
+    color: #92400E;
+}
+
+.button-back {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #F59E0B;
+    color: white;
+    text-decoration: none;
+    border-radius: var(--wp--custom--border-radius--medium);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button-back:hover {
+    background: #D97706;
 }
 
 /* Extras Selection */
 .extras-selection {
-    margin-bottom: 30px;
     background: #fff;
-    padding: 25px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 24px;
+}
+
+.extras-selection > p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: #0B1F3B;
 }
 
 .extra-option {
     display: flex;
     align-items: center;
-    padding: 15px;
-    margin-bottom: 10px;
-    background: #f9f9f9;
-    border-radius: 6px;
+    padding: 12px 16px;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--medium);
+    margin-bottom: 12px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
 }
 
 .extra-option:hover {
-    background: #f0f0f0;
+    background: #F9FAFB;
+    border-color: #2ECC71;
 }
 
 .extra-option input[type="checkbox"] {
-    margin-right: 15px;
+    margin-right: 12px;
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 .extra-name {
     flex: 1;
-    font-weight: 500;
+    font-size: 15px;
+    color: #0B1F3B;
 }
 
 .extra-price {
     font-weight: 600;
-    color: #2271b1;
+    color: #0B1F3B;
+    font-size: 16px;
 }
 
-/* Checkout Form */
+/* Form Section */
 .checkout-form-section {
     background: #fff;
-    padding: 25px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 24px;
+}
+
+.checkout-form-section > p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #0B1F3B;
 }
 
 .form-fields-grid {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .form-field {
@@ -271,57 +311,46 @@
     flex-direction: column;
 }
 
-.form-field.col-span-6 {
-    grid-column: span 6 / span 6;
+.col-span-6 {
+    grid-column: span 6;
 }
 
-.form-field.col-span-12 {
-    grid-column: span 12 / span 12;
+.col-span-12 {
+    grid-column: span 12;
 }
 
 @media (max-width: 768px) {
-    .form-field.col-span-6 {
-        grid-column: span 12 / span 12;
+    .col-span-6 {
+        grid-column: span 12;
     }
 }
 
 .form-field label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
+    color: #0B1F3B;
+    margin-bottom: 8px;
 }
 
-.form-field label .required {
-    color: #dc3232;
+.required {
+    color: #EF4444;
 }
 
-.form-field input[type="text"],
-.form-field input[type="email"],
-.form-field input[type="tel"],
-.form-field input[type="number"] {
-    width: 100%;
-    height: 56px;
-    padding: 0 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.2s;
-}
-
+.form-field input,
 .form-field textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.2s;
+    padding: 12px 16px;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--medium);
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
     outline: none;
-    border-color: #2271b1;
+    border-color: #2ECC71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
 }
 
 .form-field textarea {
@@ -330,60 +359,55 @@
 }
 
 .button-submit {
-    background: #2271b1;
-    color: #fff;
-    border: none;
-    padding: 15px 40px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
     width: 100%;
+    padding: 16px 32px;
+    background: #2ECC71;
+    color: white;
+    border: none;
+    border-radius: var(--wp--custom--border-radius--large);
+    font-family: var(--wp--custom--font-family--button);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .button-submit:hover {
-    background: #135e96;
-}
-
-.button-submit:disabled {
-    background: #ccc;
-    cursor: not-allowed;
+    background: #27AE60;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
 }
 
 #form-messages {
-    margin-top: 20px;
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: var(--wp--custom--border-radius--medium);
 }
 
 #form-messages.success {
-    padding: 15px;
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    border-radius: 4px;
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #6EE7B7;
 }
 
 #form-messages.error {
-    padding: 15px;
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
 }
 
 /* Order Summary */
 .order-summary {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 8px;
-    margin-top: 30px;
+    background: #F9FAFB;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 24px;
 }
 
 .order-summary h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #0B1F3B;
 }
 
 .summary-row {
@@ -392,39 +416,51 @@
     align-items: center;
     padding: 12px 0;
     font-size: 15px;
-    color: #666;
 }
 
 .summary-row .price {
     font-weight: 600;
-    color: #333;
+    color: #0B1F3B;
 }
 
 .summary-divider {
     height: 1px;
-    background: #ddd;
-    margin: 15px 0;
+    background: #E4E7EC;
+    margin: 16px 0;
 }
 
-.summary-row.summary-total {
-    font-size: 20px;
+.summary-total {
+    font-size: 18px;
     font-weight: 700;
-    padding-top: 15px;
-    color: #000;
+    color: #0B1F3B;
+    padding-top: 16px;
 }
 
-.summary-row.summary-total .total-price {
-    font-size: 28px;
-    color: #10b981;
+.summary-total .total-price {
+    font-size: 24px;
+    color: #2ECC71;
 }
 
 .vat-notice {
-    text-align: right;
+    text-align: center;
+    color: #6F7988;
     font-size: 13px;
-    color: #666;
-    margin: 5px 0 0 0;
+    margin: 16px 0 0 0;
 }
 
-#selected-extras-summary {
-    margin: 10px 0;
+/* No Website Selected */
+.no-website-selected {
+    background: #fff;
+    border: 1px solid #E4E7EC;
+    border-radius: var(--wp--custom--border-radius--large);
+    padding: 48px 24px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.no-website-selected p {
+    font-size: 16px;
+    color: #6F7988;
+    margin: 0;
 }

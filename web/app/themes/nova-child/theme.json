@@ -1,6 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
+	"customTemplates": [
+		{
+			"name": "checkout",
+			"title": "Checkout (Full Width)",
+			"postTypes": ["page"]
+		}
+	],
 	"settings": {
 		"custom": {
 			"borderRadius": {

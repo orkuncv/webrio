@@ -242,6 +242,7 @@ class Aanbod_Websites_Packages_Shortcode
                 const toggleBtns = document.querySelectorAll('.toggle-btn');
                 const packageCards = document.querySelectorAll('.package-card');
 
+                // Toggle between monthly/yearly pricing
                 toggleBtns.forEach(btn => {
                     btn.addEventListener('click', function() {
                         const period = this.dataset.period;
@@ -270,6 +271,51 @@ class Aanbod_Websites_Packages_Shortcode
                                 });
                                 periodText.textContent = 'Eenmalig + €299 Opstartkosten';
                             }
+                        });
+                    });
+                });
+
+                // Handle package selection
+                const packageButtons = document.querySelectorAll('.package-cta-button');
+                packageButtons.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const packageIndex = this.dataset.packageIndex;
+                        const websiteId = this.dataset.websiteId;
+                        const checkoutUrl = this.dataset.checkoutUrl;
+
+                        // Disable button and show loading state
+                        this.disabled = true;
+                        this.textContent = 'Bezig...';
+
+                        // Make AJAX call to save selection
+                        fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: new URLSearchParams({
+                                action: 'set_selected_website_and_package',
+                                website_id: websiteId,
+                                package_index: packageIndex
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                window.location.href = checkoutUrl;
+                            } else {
+                                alert(data.data.message || 'Er is iets misgegaan');
+                                this.disabled = false;
+                                this.textContent = '<?php echo esc_js($atts['button_text']); ?>';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Er is een fout opgetreden');
+                            this.disabled = false;
+                            this.textContent = '<?php echo esc_js($atts['button_text']); ?>';
                         });
                     });
                 });

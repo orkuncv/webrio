@@ -30,6 +30,14 @@ jQuery(document).ready(function($) {
         });
 
         $('#selected-extras-summary').html(extrasHtml);
+
+        // Add startup costs
+        const startupCostEl = $('#startup-cost');
+        if (startupCostEl.length) {
+            const startupCost = parseFloat(startupCostEl.data('price')) || 0;
+            total += startupCost;
+        }
+
         $('#total-price').text(formatPrice(total));
     }
 

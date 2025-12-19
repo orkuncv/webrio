@@ -42,6 +42,7 @@ class Aanbod_Websites_Checkout_Settings
     public static function register_settings()
     {
         register_setting('website_checkout_settings', 'website_checkout_fields');
+        register_setting('website_checkout_settings', 'website_startup_cost');
     }
 
     /**
@@ -66,10 +67,16 @@ class Aanbod_Websites_Checkout_Settings
             }
 
             update_option('website_checkout_fields', $sanitized_fields);
+
+            // Save startup cost
+            $startup_cost = isset($_POST['startup_cost']) ? floatval($_POST['startup_cost']) : 0;
+            update_option('website_startup_cost', $startup_cost);
+
             echo '<div class="notice notice-success"><p>' . __('Instellingen opgeslagen!', 'aanbod-websites') . '</p></div>';
         }
 
         $fields = get_option('website_checkout_fields', []);
+        $startup_cost = get_option('website_startup_cost', 0);
         ?>
         <div class="wrap">
             <h1><?php _e('Checkout Formulier Instellingen', 'aanbod-websites'); ?></h1>
@@ -87,6 +94,26 @@ class Aanbod_Websites_Checkout_Settings
             <form method="post" action="">
                 <?php wp_nonce_field('website_checkout_fields_nonce'); ?>
 
+                <h2><?php _e('Algemene Instellingen', 'aanbod-websites'); ?></h2>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row">
+                            <label for="startup_cost"><?php _e('Opstartkosten', 'aanbod-websites'); ?></label>
+                        </th>
+                        <td>
+                            <input type="number"
+                                   id="startup_cost"
+                                   name="startup_cost"
+                                   value="<?php echo esc_attr($startup_cost); ?>"
+                                   step="0.01"
+                                   min="0"
+                                   class="regular-text" />
+                            <p class="description"><?php _e('Eenmalige opstartkosten die worden toegevoegd aan elke bestelling (bijv. 299)', 'aanbod-websites'); ?></p>
+                        </td>
+                    </tr>
+                </table>
+
+                <h2><?php _e('Checkout Formulier Velden', 'aanbod-websites'); ?></h2>
                 <table class="checkout-fields-table">
                     <thead>
                         <tr>
