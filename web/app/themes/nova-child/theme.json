@@ -2,6 +2,23 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
+		"custom": {
+			"borderRadius": {
+				"none": "0",
+				"small": "0.25rem",
+				"default": "0.5rem",
+				"medium": "0.75rem",
+				"large": "1rem",
+				"xl": "1.5rem",
+				"xxl": "2rem",
+				"full": "9999px"
+			},
+			"fontFamily": {
+				"body": "Gabarito, sans-serif",
+				"heading": "Gabarito, sans-serif",
+				"button": "Gabarito, sans-serif"
+			}
+		},
 		"color": {
 			"palette": [
 				{
