@@ -61,8 +61,52 @@ class Aanbod_Websites_Checkout_Shortcode
 
                 <!-- RIGHT COLUMN: Checkout Form -->
                 <div class="checkout-right">
-                    <h2><?php _e('Start nu je bestelling', 'aanbod-websites'); ?></h2>
+                    <h2><?php _e('Uw Gegevens', 'aanbod-websites'); ?></h2>
                     <p class="subtitle"><?php echo esc_html($website->post_title); ?> - Vul je gegevens in</p>
+
+                    <?php if (!empty($checkout_fields)): ?>
+                        <div class="checkout-form-section">
+                            <div id="form-messages"></div>
+                            <form id="website-checkout-form">
+                                <input type="hidden" name="website_id" value="<?php echo $website_id; ?>">
+                                <input type="hidden" name="action" value="submit_website_order">
+                                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('website_order_nonce'); ?>">
+
+                                <div class="form-fields-grid">
+                                    <?php foreach ($checkout_fields as $index => $field):
+                                        $width = isset($field['width']) ? $field['width'] : '100';
+                                        $span = $width == '50' ? '6' : '12';
+                                        ?>
+                                        <div class="form-field col-span-<?php echo $span; ?>">
+                                            <label for="field_<?php echo $index; ?>">
+                                                <?php echo esc_html($field['label']); ?>
+                                                <?php if ($field['required']): ?>
+                                                    <span class="required">*</span>
+                                                <?php endif; ?>
+                                            </label>
+
+                                            <?php if ($field['type'] === 'textarea'): ?>
+                                                <textarea
+                                                        id="field_<?php echo $index; ?>"
+                                                        name="form_fields[<?php echo sanitize_key($field['label']); ?>]"
+                                                        placeholder="<?php echo esc_attr($field['placeholder']); ?>"
+                                            <?php echo $field['required'] ? 'required' : ''; ?>
+                                        ></textarea>
+                                            <?php else: ?>
+                                                <input
+                                                        type="<?php echo esc_attr($field['type']); ?>"
+                                                        id="field_<?php echo $index; ?>"
+                                                        name="form_fields[<?php echo sanitize_key($field['label']); ?>]"
+                                                        placeholder="<?php echo esc_attr($field['placeholder']); ?>"
+                                                        <?php echo $field['required'] ? 'required' : ''; ?>
+                                                />
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </form>
+                        </div>
+                    <?php endif; ?>
 
                     <?php if ($has_extras): ?>
                         <div class="extras-selection">
@@ -110,54 +154,6 @@ class Aanbod_Websites_Checkout_Shortcode
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-
-                    <?php if (!empty($checkout_fields)): ?>
-                        <div class="checkout-form-section">
-                            <p><?php _e('Uw Gegevens', 'aanbod-websites'); ?></p>
-                            <form id="website-checkout-form">
-                                <input type="hidden" name="website_id" value="<?php echo $website_id; ?>">
-                                <input type="hidden" name="action" value="submit_website_order">
-                                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('website_order_nonce'); ?>">
-
-                                <div class="form-fields-grid">
-                                    <?php foreach ($checkout_fields as $index => $field):
-                                        $width = isset($field['width']) ? $field['width'] : '100';
-                                        $span = $width == '50' ? '6' : '12';
-                                        ?>
-                                        <div class="form-field col-span-<?php echo $span; ?>">
-                                            <label for="field_<?php echo $index; ?>">
-                                                <?php echo esc_html($field['label']); ?>
-                                                <?php if ($field['required']): ?>
-                                                    <span class="required">*</span>
-                                                <?php endif; ?>
-                                            </label>
-
-                                            <?php if ($field['type'] === 'textarea'): ?>
-                                                <textarea
-                                                        id="field_<?php echo $index; ?>"
-                                                        name="form_fields[<?php echo sanitize_key($field['label']); ?>]"
-                                                        placeholder="<?php echo esc_attr($field['placeholder']); ?>"
-                                            <?php echo $field['required'] ? 'required' : ''; ?>
-                                        ></textarea>
-                                            <?php else: ?>
-                                                <input
-                                                        type="<?php echo esc_attr($field['type']); ?>"
-                                                        id="field_<?php echo $index; ?>"
-                                                        name="form_fields[<?php echo sanitize_key($field['label']); ?>]"
-                                                        placeholder="<?php echo esc_attr($field['placeholder']); ?>"
-                                                        <?php echo $field['required'] ? 'required' : ''; ?>
-                                                />
-                                            <?php endif; ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-
-                                <button type="submit" class="button-submit"><?php _e('Bestelling Plaatsen', 'aanbod-websites'); ?></button>
-                            </form>
-                            <div id="form-messages"></div>
-                        </div>
-                    <?php endif; ?>
-
                 </div>
                 <!-- END RIGHT COLUMN -->
 
@@ -214,6 +210,8 @@ class Aanbod_Websites_Checkout_Shortcode
                                 €<?php echo number_format(0, 2, ',', '.'); ?>
                             </span>
                     </div>
+
+                    <button type="submit" class="button-submit"><?php _e('Bestelling Plaatsen', 'aanbod-websites'); ?></button>
                 </div>
                 <!-- END LEFT COLUMN -->
             </div>

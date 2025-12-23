@@ -86,6 +86,7 @@
     background: #fff;
     padding: 25px;
     border-radius: var(--wp--custom--border-radius--large);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .checkout-right h2 {
@@ -236,10 +237,6 @@
 
 /* Extras Selection */
 .extras-selection {
-    background: #fff;
-    border: 1px solid #E4E7EC;
-    border-radius: var(--wp--custom--border-radius--large);
-    padding: 24px;
 }
 
 .extras-selection > p:first-child {
@@ -282,14 +279,6 @@
     font-weight: 600;
     color: #0B1F3B;
     font-size: 16px;
-}
-
-/* Form Section */
-.checkout-form-section {
-    background: #fff;
-    border: 1px solid #E4E7EC;
-    border-radius: var(--wp--custom--border-radius--large);
-    padding: 24px;
 }
 
 .checkout-form-section > p:first-child {
@@ -379,8 +368,6 @@
 }
 
 #form-messages {
-    margin-top: 16px;
-    padding: 12px;
     border-radius: var(--wp--custom--border-radius--medium);
 }
 
