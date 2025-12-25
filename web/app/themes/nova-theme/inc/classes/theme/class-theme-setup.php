@@ -62,6 +62,11 @@ if ( ! class_exists( 'Nova_Theme_Setup' ) ) :
 				[],
 				$theme_version
 			);
+            wp_enqueue_style(
+                'nova-blocks-style',
+                get_template_directory_uri() . '/assets/css/blocks.css',
+                array(),
+                $theme_version);
 		}
 
 		/**
