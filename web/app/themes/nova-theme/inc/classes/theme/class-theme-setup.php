@@ -22,7 +22,8 @@ if ( ! class_exists( 'Nova_Theme_Setup' ) ) :
 			add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 			add_action( 'init', [ $this, 'register_block_styles' ] );
-			add_action( 'init', [ $this, 'register_pattern_categories' ] );
+			add_action( 'init', [ $this, 'register_pattern_categories' ], 9 );
+			add_action( 'init', [ $this, 'register_patterns_from_subdirs' ], 11 );
 			add_filter( 'body_class', [ $this, 'add_logo_size_body_classes' ] );
 		}
 
@@ -139,6 +140,81 @@ if ( ! class_exists( 'Nova_Theme_Setup' ) ) :
 			foreach ( $categories as $slug => $args ) {
 				register_block_pattern_category( $slug, $args );
 			}
+		}
+
+		/**
+		 * Register patterns from subdirectories.
+		 *
+		 * @since 1.0.0
+		 */
+		public function register_patterns_from_subdirs(): void {
+			$patterns_dir = get_template_directory() . '/patterns';
+
+			if ( ! is_dir( $patterns_dir ) ) {
+				return;
+			}
+
+			// Get all subdirectories in patterns folder
+			$subdirs = glob( $patterns_dir . '/*', GLOB_ONLYDIR );
+
+			foreach ( $subdirs as $subdir ) {
+				// Get all PHP files in this subdirectory
+				$pattern_files = glob( $subdir . '/*.php' );
+
+				foreach ( $pattern_files as $pattern_file ) {
+					$this->register_pattern_from_file( $pattern_file );
+				}
+			}
+		}
+
+		/**
+		 * Register a single pattern from file.
+		 *
+		 * @param string $file_path Path to pattern file.
+		 *
+		 * @since 1.0.0
+		 */
+		private function register_pattern_from_file( string $file_path ): void {
+			if ( ! file_exists( $file_path ) ) {
+				return;
+			}
+
+			$file_data = get_file_data(
+				$file_path,
+				[
+					'title'       => 'Title',
+					'slug'        => 'Slug',
+					'description' => 'Description',
+					'categories'  => 'Categories',
+				]
+			);
+
+			// Only register if we have required data
+			if ( empty( $file_data['slug'] ) || empty( $file_data['title'] ) ) {
+				return;
+			}
+
+			// Get pattern content
+			ob_start();
+			include $file_path;
+			$content = ob_get_clean();
+
+			// Prepare categories
+			$categories = [];
+			if ( ! empty( $file_data['categories'] ) ) {
+				$categories = array_map( 'trim', explode( ',', $file_data['categories'] ) );
+			}
+
+			// Register the pattern
+			register_block_pattern(
+				$file_data['slug'],
+				[
+					'title'       => $file_data['title'],
+					'description' => $file_data['description'] ?? '',
+					'content'     => $content,
+					'categories'  => $categories,
+				]
+			);
 		}
 
 	/**

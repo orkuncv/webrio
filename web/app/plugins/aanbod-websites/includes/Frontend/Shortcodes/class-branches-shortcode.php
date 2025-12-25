@@ -133,8 +133,28 @@ class Aanbod_Websites_Branches_Shortcode
                 padding: 0 0 0 30px;
             }
             .branch-card .gridItemContent .gridItemContentWrapper h4 {
-                margin: 0 0 30px 0;
+                margin: 0 0 15px 0;
                 padding: 0 0 0 30px;
+            }
+            .branch-card .gridItemContent .gridItemContentWrapper .branch-cta {
+                background: #fff;
+                border: 2px solid #fff;
+                border-radius: 5px;
+                color: #414B5A;
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0 0 30px 30px;
+                padding: 10px 20px;
+                text-decoration: none;
+                transition: all .3s ease;
+                position: relative;
+                z-index: 10;
+            }
+            .branch-card .gridItemContent .gridItemContentWrapper .branch-cta:hover {
+                background: #414B5A;
+                color: #fff;
+                transform: translateY(-2px);
             }
         </style>
         <div class="website-branches-grid"><?php
@@ -168,7 +188,9 @@ class Aanbod_Websites_Branches_Shortcode
                     </div>
                     <div class="gridItemContent">
                         <div class="gridItemContentWrapper">
-                            <h4><?php echo esc_html($term->name); ?></h4><a href="<?php echo esc_url($demo_url); ?>" class="overlay_link"></a>
+                            <h4><?php echo esc_html($term->name); ?></h4>
+                            <a href="<?php echo esc_url($demo_url); ?>" class="branch-cta">Bekijk websites</a>
+                            <a href="<?php echo esc_url($demo_url); ?>" class="overlay_link"></a>
                         </div>
                     </div>
                 </div>
