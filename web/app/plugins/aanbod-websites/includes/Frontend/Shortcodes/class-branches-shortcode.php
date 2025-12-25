@@ -137,14 +137,13 @@ class Aanbod_Websites_Branches_Shortcode
                 padding: 0 0 0 30px;
             }
             .branch-card .gridItemContent .gridItemContentWrapper .branch-cta {
-                background: #fff;
                 border: 2px solid #fff;
                 border-radius: 5px;
-                color: #414B5A;
+                color: #FFFFFF;
                 display: inline-block;
                 font-size: 14px;
                 font-weight: 600;
-                margin: 0 0 30px 30px;
+                margin: 0 0 30px 0;
                 padding: 10px 20px;
                 text-decoration: none;
                 transition: all .3s ease;
