@@ -76,13 +76,19 @@ class Aanbod_Websites
         Aanbod_Websites_Checkout_Settings::register();
         Aanbod_Websites_Global_Extras_Settings::register();
 
+        // Load Admin TermMeta
+        require_once $base_path . 'Admin/TermMeta/class-branch-term-meta.php';
+        Aanbod_Websites_Branch_Term_Meta::register();
+
         // Load Frontend Shortcodes
         require_once $base_path . 'Frontend/Shortcodes/class-packages-shortcode.php';
         require_once $base_path . 'Frontend/Shortcodes/class-cta-shortcode.php';
         require_once $base_path . 'Frontend/Shortcodes/class-checkout-shortcode.php';
+        require_once $base_path . 'Frontend/Shortcodes/class-branches-shortcode.php';
         Aanbod_Websites_Packages_Shortcode::register();
         Aanbod_Websites_CTA_Shortcode::register();
         Aanbod_Websites_Checkout_Shortcode::register();
+        Aanbod_Websites_Branches_Shortcode::register();
 
         // Load Frontend Assets
         require_once $base_path . 'Frontend/class-assets.php';

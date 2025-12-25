@@ -37,3 +37,5 @@ function nova_child_enqueue_google_fonts(): void {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'nova_child_enqueue_google_fonts' );
+
+remove_filter( 'the_content', 'wpautop' );
