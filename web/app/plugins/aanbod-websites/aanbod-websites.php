@@ -85,10 +85,14 @@ class Aanbod_Websites
         require_once $base_path . 'Frontend/Shortcodes/class-cta-shortcode.php';
         require_once $base_path . 'Frontend/Shortcodes/class-checkout-shortcode.php';
         require_once $base_path . 'Frontend/Shortcodes/class-branches-shortcode.php';
+        require_once $base_path . 'Frontend/Shortcodes/class-branch-features-shortcode.php';
+        require_once $base_path . 'Frontend/Shortcodes/class-branch-demos-shortcode.php';
         Aanbod_Websites_Packages_Shortcode::register();
         Aanbod_Websites_CTA_Shortcode::register();
         Aanbod_Websites_Checkout_Shortcode::register();
         Aanbod_Websites_Branches_Shortcode::register();
+        Aanbod_Websites_Branch_Features_Shortcode::register();
+        Aanbod_Websites_Branch_Demos_Shortcode::register();
 
         // Load Frontend Assets
         require_once $base_path . 'Frontend/class-assets.php';

@@ -1,53 +1,123 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"nova-child"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0">
+<main class="wp-block-group" style="margin-top:0"><!-- wp:cover {"dimRatio":0,"overlayColor":"nova-50","isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":0.15},"minHeight":250,"isDark":false,"align":"full","className":"nova-hero-bg","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"backgroundColor":"nova-10"} -->
+    <div class="wp-block-cover alignfull is-light nova-hero-bg has-nova-10-background-color has-background" style="padding-top:0;padding-bottom:0;min-height:250px"><span aria-hidden="true" class="wp-block-cover__background has-nova-50-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph -->
+        <p></p>
+                                                                                                                                                                                                                                                                                                                                                         <!-- /wp:paragraph --></div></div>
+                                                  <!-- /wp:cover -->
 
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+                                                  <!-- wp:group {"align":"full","className":"nova-hero-card","style":{"spacing":{"margin":{"top":"-200px"},"padding":{"top":"var:preset|spacing|5xl","right":"var:preset|spacing|xl","bottom":"0","left":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull nova-hero-card" style="margin-top:-200px;padding-top:var(--wp--preset--spacing--5-xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:0;padding-left:var(--wp--preset--spacing--xl)"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","right":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl","left":"var:preset|spacing|xl"}}},"backgroundColor":"white","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+        <div class="wp-block-group alignwide has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl);padding-left:var(--wp--preset--spacing--xl)"><!-- wp:group {"className":"aligncontent","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group aligncontent"><!-- wp:paragraph {"align":"center","className":"is-style-uppercase-small","textColor":"nova-75"} -->
+                <p class="has-text-align-center is-style-uppercase-small has-nova-75-color has-text-color">Websites voor <strong>{term_name}</strong></p>
+                                                     <!-- /wp:paragraph -->
 
-        <!-- wp:query-title {"type":"archive","textAlign":"center"} /-->
+                                                     <!-- wp:heading {"textAlign":"center","level":1,"fontSize":"xl-heading"} -->
+                <h1 class="wp-block-heading has-text-align-center has-xl-heading-font-size">Website voor jouw <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-success-green-color"><strong>branche</strong></mark></h1>
+                                                     <!-- /wp:heading -->
 
-        <!-- wp:term-description {"textAlign":"center"} /-->
+                                                     <!-- wp:term-description {"textAlign":"center"} /-->
 
-    </div>
-    <!-- /wp:group -->
+                                                     <!-- wp:buttons {"className":"is-content-justification-center is-layout-flex","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+                <div class="wp-block-buttons is-content-justification-center is-layout-flex"><!-- wp:button {"backgroundColor":"success-green","textColor":"white"} -->
+                    <div class="wp-block-button"><a class="wp-block-button__link has-white-color has-success-green-background-color has-text-color has-background wp-element-button">Bekijk demo websites</a></div>
+                                                                                             <!-- /wp:button --></div>
+                                                     <!-- /wp:buttons --></div>
+                                                                                                                                                                                                                                                                                  <!-- /wp:group --></div>
+                                                                                                                                                                                                                                          <!-- /wp:group --></div>
+                                                  <!-- /wp:group -->
 
-    <!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignfull">
+                                                  <!-- wp:group {"metadata":{"categories":["features"],"patternName":"nova/features-grid-images","name":"Features Grid with Images"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|5xl","bottom":"var:preset|spacing|5xl","left":"var:preset|spacing|xl","right":"var:preset|spacing|xl"}}},"backgroundColor":"background-primary","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-background-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--5-xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--5-xl);padding-left:var(--wp--preset--spacing--xl)"><!-- wp:heading {"textAlign":"center","fontSize":"m-heading"} -->
+        <h2 class="wp-block-heading has-text-align-center has-m-heading-font-size">Speciaal ontwikkeld voor <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-success-green-color"><strong>{term_name}</strong></mark></h2>
+                                                                                                                                                                                                                                                                                               <!-- /wp:heading -->
 
-        <!-- wp:query {"queryId":0,"query":{"perPage":12,"pages":0,"offset":0,"postType":"website","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"align":"wide"} -->
-        <div class="wp-block-query alignwide">
+                                                                                                                                                                                                                                                                                               <!-- wp:shortcode -->
+                                                                                                                                                                                                                                                                                               [branch_features]
+                                                                                                                                                                                                                                                                                               <!-- /wp:shortcode --></div>
+                                                  <!-- /wp:group -->
 
-            <!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":3}} -->
+                                                  <!-- wp:group {"metadata":{"categories":["features"],"patternName":"nova/features-grid-images","name":"Features Grid with Images"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|5xl","bottom":"var:preset|spacing|5xl","left":"var:preset|spacing|xl","right":"var:preset|spacing|xl"}}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--5-xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--5-xl);padding-left:var(--wp--preset--spacing--xl)"><!-- wp:heading {"textAlign":"center","fontSize":"m-heading"} -->
+        <h2 class="wp-block-heading has-text-align-center has-m-heading-font-size">Bekijk demo websites</h2>
+                                                                                                                                                                                                                                                                                  <!-- /wp:heading -->
 
-                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"12px"}}} /-->
+                                                                                                                                                                                                                                                                                  <!-- wp:shortcode -->
+                                                                                                                                                                                                                                                                                  [branch_demos]
+                                                                                                                                                                                                                                                                                  <!-- /wp:shortcode --></div>
+                                                  <!-- /wp:group -->
 
-                <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} /-->
+                                                  <!-- wp:group {"metadata":{"categories":["description"],"patternName":"nova/description-image-left","name":"Description, image right"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|5xl","bottom":"var:preset|spacing|xl","left":"var:preset|spacing|xl","right":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--5-xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--xl);padding-left:var(--wp--preset--spacing--xl)"><!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|xl"}}}} -->
+        <div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"50%"} -->
+            <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:50%"><!-- wp:cover {"dimRatio":0,"overlayColor":"nova-50","isUserOverlayColor":true,"minHeight":400,"isDark":false,"className":"nova-image-placeholder","backgroundColor":"nova-10"} -->
+                <div class="wp-block-cover is-light nova-image-placeholder has-nova-10-background-color has-background" style="min-height:400px"><span aria-hidden="true" class="wp-block-cover__background has-nova-50-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph -->
+                    <p></p>
+                                                                                                                                                                                                                                                                                                                                      <!-- /wp:paragraph --></div></div>
+                                                                                          <!-- /wp:cover --></div>
+                                                                           <!-- /wp:column -->
 
-                <!-- wp:post-excerpt {"moreText":"Lees meer","excerptLength":20} /-->
+                                                                           <!-- wp:column {"verticalAlignment":"center","width":"50%","style":{"spacing":{"blockGap":"2rem"}}} -->
+            <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"fontSize":"m-heading"} -->
+                <h2 class="wp-block-heading has-m-heading-font-size">Voor wie is deze website geschikt?</h2>
+                                                                                             <!-- /wp:heading -->
 
-            <!-- /wp:post-template -->
+                                                                                             <!-- wp:paragraph -->
+                <p>Deze website is geschikt voor <strong>autogarages en autoservicebedrijven</strong> die snel online zichtbaar willen zijn zonder tijd te verliezen aan complexe website-trajecten. Of je nu een kleine zelfstandige garage bent of een groeiend autobedrijf runt, onze template-website sluit direct aan op jouw dagelijkse praktijk.</p>
+                                                                                             <!-- /wp:paragraph -->
 
-            <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
-                <!-- wp:query-pagination-previous /-->
-                <!-- wp:query-pagination-numbers /-->
-                <!-- wp:query-pagination-next /-->
-            <!-- /wp:query-pagination -->
+                                                                                             <!-- wp:columns -->
+                <div class="wp-block-columns"><!-- wp:column -->
+                    <div class="wp-block-column"><!-- wp:list {"className":"is-style-list-style-check-circle","style":{"spacing":{"padding":{"right":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
+                        <ul style="margin-top:0;margin-bottom:0;padding-right:0;padding-left:0" class="wp-block-list is-style-list-style-check-circle"><!-- wp:list-item {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+                            <li style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">Autogarages</li>
+                                                                                                                                                       <!-- /wp:list-item -->
 
-            <!-- wp:query-no-results -->
-                <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
-                <p>Geen websites gevonden in deze branche.</p>
-                <!-- /wp:paragraph -->
-            <!-- /wp:query-no-results -->
+                                                                                                                                                       <!-- wp:list-item {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+                            <li style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">Autoservicebedrijven</li>
+                                                                                                                                                       <!-- /wp:list-item --></ul>
+                                                 <!-- /wp:list --></div>
+                                              <!-- /wp:column -->
 
-        </div>
-        <!-- /wp:query -->
+                                              <!-- wp:column -->
+                    <div class="wp-block-column"><!-- wp:list {"className":"is-style-list-style-check-circle","style":{"spacing":{"padding":{"right":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
+                        <ul style="margin-top:0;margin-bottom:0;padding-right:0;padding-left:0" class="wp-block-list is-style-list-style-check-circle"><!-- wp:list-item {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+                            <li style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">APK-stations</li>
+                                                                                                                                                       <!-- /wp:list-item -->
 
-    </div>
-    <!-- /wp:group -->
+                                                                                                                                                       <!-- wp:list-item {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} -->
+                            <li style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30)">Reparatie- en onderhoudsbedrijven</li>
+                                                                                                                                                       <!-- /wp:list-item --></ul>
+                                                 <!-- /wp:list --></div>
+                                              <!-- /wp:column --></div>
+                                                                                             <!-- /wp:columns --></div>
+                                                                           <!-- /wp:column --></div>
+                                                                                                                                                                                                                                      <!-- /wp:columns --></div>
+                                                  <!-- /wp:group -->
 
-</main>
+                                                  <!-- wp:group {"metadata":{"categories":["description"],"patternName":"nova/description-image-right","name":"Description, image right"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|5xl","left":"var:preset|spacing|xl","right":"var:preset|spacing|xl"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--xl);padding-right:var(--wp--preset--spacing--xl);padding-bottom:var(--wp--preset--spacing--5-xl);padding-left:var(--wp--preset--spacing--xl)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|xl"}}}} -->
+        <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%","style":{"spacing":{"blockGap":"2rem"}}} -->
+            <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"fontSize":"m-heading"} -->
+                <h2 class="wp-block-heading has-m-heading-font-size">Waarom kiezen autogarages voor Webrio?</h2>
+                                                                                             <!-- /wp:heading -->
+
+                                                                                             <!-- wp:paragraph -->
+                <p>Autogarages kiezen voor <strong>Webrio</strong> omdat wij begrijpen dat tijd geld is. Daarom leveren wij professionele autogarage websites op basis van vaste templates, met minimale inspanning voor de ondernemer.</p>
+                                                                                             <!-- /wp:paragraph --></div>
+                                                                              <!-- /wp:column -->
+
+                                                                              <!-- wp:column {"verticalAlignment":"center","width":"50%","layout":{"type":"default"}} -->
+            <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:cover {"dimRatio":0,"overlayColor":"nova-50","isUserOverlayColor":true,"minHeight":400,"isDark":false,"className":"nova-image-placeholder","backgroundColor":"nova-10"} -->
+                <div class="wp-block-cover is-light nova-image-placeholder has-nova-10-background-color has-background" style="min-height:400px"><span aria-hidden="true" class="wp-block-cover__background has-nova-50-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:paragraph -->
+                    <p></p>
+                                                                                                                                                                                                                                                                                                                                      <!-- /wp:paragraph --></div></div>
+                                                                                             <!-- /wp:cover --></div>
+                                                                              <!-- /wp:column --></div>
+                                                                                                                                                                                                                                      <!-- /wp:columns --></div>
+                                                  <!-- /wp:group --></main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"nova-child"} /-->

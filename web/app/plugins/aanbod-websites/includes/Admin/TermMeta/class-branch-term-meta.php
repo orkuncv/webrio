@@ -60,18 +60,15 @@ class Aanbod_Websites_Branch_Term_Meta
         </div>
 
         <div class="form-field">
-            <label for="branch_usp_1"><?php _e('USP 1', 'aanbod-websites'); ?></label>
-            <input type="text" name="branch_usp_1" id="branch_usp_1" placeholder="Bijvoorbeeld: Moderne designs" />
-        </div>
-
-        <div class="form-field">
-            <label for="branch_usp_2"><?php _e('USP 2', 'aanbod-websites'); ?></label>
-            <input type="text" name="branch_usp_2" id="branch_usp_2" placeholder="Bijvoorbeeld: SEO geoptimaliseerd" />
-        </div>
-
-        <div class="form-field">
-            <label for="branch_usp_3"><?php _e('USP 3', 'aanbod-websites'); ?></label>
-            <input type="text" name="branch_usp_3" id="branch_usp_3" placeholder="Bijvoorbeeld: 24/7 support" />
+            <label><?php _e('Branch Features', 'aanbod-websites'); ?></label>
+            <div id="branch-features-repeater">
+                <div class="branch-features-empty" style="padding: 20px; background: #f0f0f1; border-radius: 4px;">
+                    <p><?php _e('Voeg features toe om ze hier te zien.', 'aanbod-websites'); ?></p>
+                </div>
+            </div>
+            <button type="button" class="button button-primary" id="add-branch-feature" style="margin-top: 10px;">
+                <?php _e('+ Voeg Feature Toe', 'aanbod-websites'); ?>
+            </button>
         </div>
         <?php
     }
@@ -86,9 +83,10 @@ class Aanbod_Websites_Branch_Term_Meta
     {
         $image_id = get_term_meta($term->term_id, 'branch_image', true);
         $price = get_term_meta($term->term_id, 'branch_price', true);
-        $usp_1 = get_term_meta($term->term_id, 'branch_usp_1', true);
-        $usp_2 = get_term_meta($term->term_id, 'branch_usp_2', true);
-        $usp_3 = get_term_meta($term->term_id, 'branch_usp_3', true);
+        $features = get_term_meta($term->term_id, 'branch_features', true);
+        if (!is_array($features)) {
+            $features = [];
+        }
         ?>
         <tr class="form-field">
             <th scope="row">
@@ -119,34 +117,50 @@ class Aanbod_Websites_Branch_Term_Meta
 
         <tr class="form-field">
             <th scope="row">
-                <label for="branch_usp_1"><?php _e('USP 1', 'aanbod-websites'); ?></label>
+                <label><?php _e('Branch Features', 'aanbod-websites'); ?></label>
             </th>
             <td>
-                <input type="text" name="branch_usp_1" id="branch_usp_1"
-                       value="<?php echo esc_attr($usp_1); ?>"
-                       placeholder="Bijvoorbeeld: Moderne designs" class="regular-text" />
-            </td>
-        </tr>
+                <div id="branch-features-repeater" style="margin-bottom: 10px;">
+                    <?php if (empty($features)): ?>
+                        <div class="branch-features-empty" style="padding: 20px; background: #f0f0f1; border-radius: 4px; margin-bottom: 10px;">
+                            <p><?php _e('Geen features toegevoegd. Klik op "Voeg Feature Toe" om te beginnen.', 'aanbod-websites'); ?></p>
+                        </div>
+                    <?php else: ?>
+                        <?php foreach ($features as $index => $feature): ?>
+                            <div class="branch-feature-item" data-index="<?php echo $index; ?>" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                    <strong><?php _e('Feature', 'aanbod-websites'); ?> #<?php echo ($index + 1); ?></strong>
+                                    <button type="button" class="button button-small remove-branch-feature"><?php _e('Verwijder', 'aanbod-websites'); ?></button>
+                                </div>
 
-        <tr class="form-field">
-            <th scope="row">
-                <label for="branch_usp_2"><?php _e('USP 2', 'aanbod-websites'); ?></label>
-            </th>
-            <td>
-                <input type="text" name="branch_usp_2" id="branch_usp_2"
-                       value="<?php echo esc_attr($usp_2); ?>"
-                       placeholder="Bijvoorbeeld: SEO geoptimaliseerd" class="regular-text" />
-            </td>
-        </tr>
+                                <p>
+                                    <label><?php _e('Titel', 'aanbod-websites'); ?></label><br>
+                                    <input type="text" name="branch_features[<?php echo $index; ?>][title]"
+                                           value="<?php echo esc_attr($feature['title'] ?? ''); ?>"
+                                           class="regular-text" placeholder="Bijvoorbeeld: Responsive Design" />
+                                </p>
 
-        <tr class="form-field">
-            <th scope="row">
-                <label for="branch_usp_3"><?php _e('USP 3', 'aanbod-websites'); ?></label>
-            </th>
-            <td>
-                <input type="text" name="branch_usp_3" id="branch_usp_3"
-                       value="<?php echo esc_attr($usp_3); ?>"
-                       placeholder="Bijvoorbeeld: 24/7 support" class="regular-text" />
+                                <p>
+                                    <label><?php _e('Afbeelding', 'aanbod-websites'); ?></label><br>
+                                    <input type="hidden" name="branch_features[<?php echo $index; ?>][image]"
+                                           value="<?php echo esc_attr($feature['image'] ?? ''); ?>"
+                                           class="branch-feature-image-id" />
+                                    <button type="button" class="button branch-feature-upload-image"><?php _e('Upload afbeelding', 'aanbod-websites'); ?></button>
+                                    <button type="button" class="button branch-feature-remove-image" style="<?php echo !empty($feature['image']) ? '' : 'display:none;'; ?>"><?php _e('Verwijder afbeelding', 'aanbod-websites'); ?></button>
+                                    <div class="branch-feature-image-preview" style="margin-top: 10px;">
+                                        <?php if (!empty($feature['image'])): ?>
+                                            <?php echo wp_get_attachment_image($feature['image'], 'thumbnail'); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </p>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+                <button type="button" class="button button-primary" id="add-branch-feature">
+                    <?php _e('+ Voeg Feature Toe', 'aanbod-websites'); ?>
+                </button>
+                <p class="description"><?php _e('Voeg features met afbeeldingen toe die specifiek zijn voor deze branche.', 'aanbod-websites'); ?></p>
             </td>
         </tr>
         <?php
@@ -171,16 +185,19 @@ class Aanbod_Websites_Branch_Term_Meta
             update_term_meta($term_id, 'branch_price', sanitize_text_field($_POST['branch_price']));
         }
 
-        if (isset($_POST['branch_usp_1'])) {
-            update_term_meta($term_id, 'branch_usp_1', sanitize_text_field($_POST['branch_usp_1']));
-        }
-
-        if (isset($_POST['branch_usp_2'])) {
-            update_term_meta($term_id, 'branch_usp_2', sanitize_text_field($_POST['branch_usp_2']));
-        }
-
-        if (isset($_POST['branch_usp_3'])) {
-            update_term_meta($term_id, 'branch_usp_3', sanitize_text_field($_POST['branch_usp_3']));
+        // Save repeater features
+        if (isset($_POST['branch_features']) && is_array($_POST['branch_features'])) {
+            $features = [];
+            foreach ($_POST['branch_features'] as $feature) {
+                $features[] = [
+                    'title' => sanitize_text_field($feature['title'] ?? ''),
+                    'image' => absint($feature['image'] ?? 0),
+                ];
+            }
+            update_term_meta($term_id, 'branch_features', $features);
+        } else {
+            // If no features, save empty array
+            update_term_meta($term_id, 'branch_features', []);
         }
     }
 }
